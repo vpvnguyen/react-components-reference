@@ -1,9 +1,12 @@
 import { ReactToolTip } from "./ReactTooltip";
-
+import { ReactToolTipClone } from "./ReactTooltipClone";
+import { CustomTooltip } from "./CustomTooltip";
 function App() {
   return (
     <div>
-      <ReactToolTip />
+      {/* <ReactToolTip /> */}
+      <ReactToolTipClone />
+      <CustomTooltip />
     </div>
   );
 }
