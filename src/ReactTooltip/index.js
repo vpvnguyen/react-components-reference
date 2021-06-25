@@ -6,7 +6,7 @@ export const ReactToolTip = () => {
   console.log(isMobile());
   return (
     <div className="tooltip-container">
-      <button data-tip data-for="helpTip">
+      <button data-tip data-for="helpTip" data-event="click focus">
         Register
       </button>
 
@@ -20,6 +20,7 @@ export const ReactToolTip = () => {
         textColor="black"
         backgroundColor="white"
         className="helpTip"
+        globalEventOff="click"
       >
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
