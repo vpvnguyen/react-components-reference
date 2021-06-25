@@ -1,0 +1,10 @@
+.example-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.example-emoji {
+  font-size: 64px;
+  width: 64px;
+  height: 64px;
+}
