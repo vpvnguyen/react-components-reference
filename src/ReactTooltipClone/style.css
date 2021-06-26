@@ -10,12 +10,12 @@ p {
   justify-content: center;
 }
 
-.rtc-container {
+.rtc-tooltip-container {
   display: inline-block;
   position: relative;
 }
 
-.rtc-tooltip-icon {
+.rtc-tooltip-icon-container {
   border: 1px solid blue;
   border-radius: 50%;
   width: 50px;
@@ -31,8 +31,8 @@ p {
     - content: " " = forces before and after state to present the elements
 */
 
-.rtc-tooltip-body::before,
-.rtc-tooltip-body::after {
+.rtc-tooltip-popup::before,
+.rtc-tooltip-popup::after {
   position: absolute;
   content: " ";
   width: 0;
@@ -62,7 +62,7 @@ p {
 */
 
 /* green triangle background */
-.rtc-tooltip-body::before {
+.rtc-tooltip-popup::before {
   border-bottom: 7px solid green;
   border-left: 6px solid transparent;
   border-right: 6px solid transparent;
@@ -72,7 +72,7 @@ p {
 }
 
 /* white triangle foreground */
-.rtc-tooltip-body::after {
+.rtc-tooltip-popup::after {
   border-bottom: 7px solid white;
   border-left: 6px solid transparent;
   border-right: 6px solid transparent;
@@ -82,7 +82,7 @@ p {
 }
 
 /* body and content needs to add up to 100% of vw */
-.rtc-tooltip-body {
+.rtc-tooltip-popup {
   position: absolute;
   width: 380px;
   margin-top: 10px;
@@ -94,11 +94,9 @@ p {
   border: 1px solid green;
   border-radius: 3px;
   background: white;
-
-  transition: opacity 0.3s ease-out;
 }
 
-.rtc-tooltip-content {
+.rtc-tooltip-popup-content {
   padding: 20px;
 
   display: flex;
@@ -108,12 +106,4 @@ p {
 
   font-size: 12px;
   color: black;
-}
-
-.rtc-tooltip-show {
-  visibility: visible;
-}
-
-.rtc-tooltip-hide {
-  visibility: hidden;
 }
