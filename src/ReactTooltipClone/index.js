@@ -12,12 +12,12 @@ export const ReactToolTipClone = () => {
   return (
     <>
       <div className="rtc-root">
-        <div className="rtc-tooltip-container">
-          <div
-            className="rtc-tooltip-icon-container"
-            onMouseOver={toggleTooltip}
-            onMouseLeave={toggleTooltip}
-          >
+        <div
+          className="rtc-tooltip-container"
+          onMouseEnter={toggleTooltip}
+          onMouseLeave={toggleTooltip}
+        >
+          <div className="rtc-tooltip-icon-container">
             <HelpSvg />
           </div>
 
