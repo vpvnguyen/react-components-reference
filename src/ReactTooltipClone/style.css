@@ -11,8 +11,8 @@ p {
 }
 
 .rtc-tooltip-container {
-  display: inline-block;
   position: relative;
+  display: inline-block;
 }
 
 .rtc-tooltip-icon-container {
@@ -66,7 +66,7 @@ p {
   border-bottom: 7px solid green;
   border-left: 6px solid transparent;
   border-right: 6px solid transparent;
-  top: -7px;
+  top: -8px;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -76,7 +76,7 @@ p {
   border-bottom: 7px solid white;
   border-left: 6px solid transparent;
   border-right: 6px solid transparent;
-  top: -6px;
+  top: -7px;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -106,4 +106,8 @@ p {
 
   font-size: 12px;
   color: black;
+
+  /* set max-height to trigger scroll */
+  /* max-height: 50vh;
+  overflow-y: auto; */
 }
