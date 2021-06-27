@@ -3,6 +3,8 @@ p {
 }
 
 :root {
+  --rtc-tooltip-base-border-size: 1px;
+  --rtc-tooltip-base-triangle-border-size: 8px;
 }
 
 .rtc-root {
@@ -23,20 +25,6 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-/* triangle initial state
-    - width & height: 0 = sets element to take up zero space; allows to create triangles using borders
-    - position: absolute = position to parent 
-    - content: " " = forces before and after state to present the elements
-*/
-
-.rtc-tooltip-popup::before,
-.rtc-tooltip-popup::after {
-  position: absolute;
-  content: " ";
-  width: 0;
-  height: 0;
 }
 
 /* Creating a bordered triangle
@@ -61,24 +49,40 @@ p {
     -- left: transform: translateX(-50%) or translateX(50%)
 */
 
-/* green triangle background */
-.rtc-tooltip-popup::before {
-  border-bottom: 7px solid green;
-  border-left: 6px solid transparent;
-  border-right: 6px solid transparent;
-  top: -8px;
+.rtc-tooltip-popup::before,
+.rtc-tooltip-popup::after {
+  /* triangle initial state
+    - width & height: 0 = sets element to take up zero space; allows to create triangles using borders
+    - position: absolute = position to parent 
+    - content: " " = forces before and after state to present the elements
+*/
+  position: absolute;
+  content: " ";
+  width: 0;
+  height: 0;
+
+  border-left: var(--rtc-tooltip-base-triangle-border-size) solid transparent;
+  border-right: var(--rtc-tooltip-base-triangle-border-size) solid transparent;
+
   left: 50%;
   transform: translateX(-50%);
 }
 
+/* green triangle background */
+.rtc-tooltip-popup::before {
+  border-bottom: var(--rtc-tooltip-base-triangle-border-size) solid green;
+  top: calc(
+    (
+        var(--rtc-tooltip-base-triangle-border-size) +
+          var(--rtc-tooltip-base-border-size)
+      ) * -1
+  );
+}
+
 /* white triangle foreground */
 .rtc-tooltip-popup::after {
-  border-bottom: 7px solid white;
-  border-left: 6px solid transparent;
-  border-right: 6px solid transparent;
-  top: -7px;
-  left: 50%;
-  transform: translateX(-50%);
+  border-bottom: var(--rtc-tooltip-base-triangle-border-size) solid white;
+  top: calc(var(--rtc-tooltip-base-triangle-border-size) * -1);
 }
 
 /* body and content needs to add up to 100% of vw */
@@ -91,7 +95,7 @@ p {
   left: 50%;
   transform: translateX(-50%);
 
-  border: 1px solid green;
+  border: var(--rtc-tooltip-base-border-size) solid green;
   border-radius: 3px;
   background: white;
 }
