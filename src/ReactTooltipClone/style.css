@@ -88,7 +88,7 @@ p {
 /* body and content needs to add up to 100% of vw */
 .rtc-tooltip-popup {
   position: absolute;
-  width: 380px;
+  width: 375px;
   margin-top: 10px;
   z-index: 999;
 
