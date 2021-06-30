@@ -112,6 +112,6 @@ p {
   color: black;
 
   /* set max-height to trigger scroll */
-  /* max-height: 50vh;
-  overflow-y: auto; */
+  max-height: 50vh;
+  overflow-y: auto;
 }
